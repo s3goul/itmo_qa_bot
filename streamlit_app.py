@@ -6,7 +6,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from utils import setup_logger, read_program_descriptions, log_request, log_response, log_error, load_prompts
 from consts import (
-    APP_TITLE, DEFAULT_MODEL, DEFAULT_MAX_TOKENS,
+    APP_TITLE, DEFAULT_MODEL,
     PROGRAM_AI_PRODUCT, PROGRAM_AI_TALENT_HUB
 )
 
@@ -107,7 +107,7 @@ def main():
         # Log request
         log_request(
             logger, st.session_state.session_id, DEFAULT_MODEL,
-            DEFAULT_MAX_TOKENS, [program_a.strip(), program_b.strip()], 
+            [program_a.strip(), program_b.strip()], 
             len(context or ""), user_msg.strip()
         )
 
@@ -116,7 +116,6 @@ def main():
                 t0 = time.perf_counter()
                 completion = client.chat.completions.create(
                     model=DEFAULT_MODEL,
-                    max_tokens=DEFAULT_MAX_TOKENS,
                     messages=messages,
                 )
                 answer = completion.choices[0].message.content.strip()
