@@ -5,7 +5,6 @@ APP_TITLE = "ITMO QA Бот"
 
 # OpenAI model settings
 DEFAULT_MODEL = "gpt-5-nano"
-DEFAULT_MAX_TOKENS = 600
 
 # File paths
 PATH_AI_PRODUCT = "summary/ai_product/ai_product.md"
