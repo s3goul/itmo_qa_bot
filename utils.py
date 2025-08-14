@@ -95,7 +95,7 @@ def read_program_descriptions(
     }
 
 
-def log_request(logger: logging.Logger, session_id: str, model: str, temperature: float, 
+def log_request(logger: logging.Logger, session_id: str, model: str,
                 max_tokens: int, programs: list, context_len: int, question: str) -> None:
     """Log chat request details."""
     try:
