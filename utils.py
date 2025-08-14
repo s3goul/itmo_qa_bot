@@ -96,12 +96,12 @@ def read_program_descriptions(
 
 
 def log_request(logger: logging.Logger, session_id: str, model: str,
-                max_tokens: int, programs: list, context_len: int, question: str) -> None:
+                programs: list, context_len: int, question: str) -> None:
     """Log chat request details."""
     try:
         logger.info(
-            "session=%s | submit | model=%s | temp=%s | max_tokens=%s | programs=%s | context_chars=%d | question=%s",
-            session_id, model, temperature, max_tokens, programs, context_len, question
+            "session=%s | submit | model=%s| programs=%s | context_chars=%d | question=%s",
+            session_id, model, programs, context_len, question
         )
     except Exception:
         pass
